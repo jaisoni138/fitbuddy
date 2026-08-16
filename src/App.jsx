@@ -207,7 +207,7 @@ export default function FitnessApp() {
       <div style={{ padding: "18px 20px 0", background: "#1c1917" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: 22, color: "#fff", letterSpacing: 0.5 }}>TRAILHEAD</div>
+            <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: 22, color: "#fff", letterSpacing: 0.5 }}>FITBUDDY</div>
             <div style={{ fontSize: 12, color: "#a8a29e" }}>Move. Log. Repeat.</div>
           </div>
           {signedIn ? (
