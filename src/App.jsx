@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "./components/layout/Header";
 import { BottomNav } from "./components/layout/BottomNav";
 import { Sidebar } from "./components/layout/Sidebar";
+import { Landing } from "./features/landing/Landing";
 import { Dashboard } from "./features/dashboard/Dashboard";
 import { LogWorkout } from "./features/logWorkout/LogWorkout";
 import { Schedule } from "./features/schedule/Schedule";
@@ -10,6 +11,8 @@ import { Profile } from "./features/profile/Profile";
 import { useActivities } from "./hooks/useActivities";
 import { useSchedule } from "./hooks/useSchedule";
 import styles from "./App.module.css";
+
+const VIEWS = { LANDING: "landing", APP: "app" };
 
 const TABS = {
   DASHBOARD: "dashboard",
@@ -20,6 +23,7 @@ const TABS = {
 };
 
 export default function App() {
+  const [view, setView] = useState(VIEWS.LANDING);
   const [tab, setTab] = useState(TABS.DASHBOARD);
   const [signedIn, setSignedIn] = useState(false);
 
@@ -31,6 +35,19 @@ export default function App() {
     setTab(TABS.DASHBOARD);
   }
 
+  function enterApp() {
+    setTab(TABS.DASHBOARD);
+    setView(VIEWS.APP);
+  }
+
+  function goHome() {
+    setView(VIEWS.LANDING);
+  }
+
+  if (view === VIEWS.LANDING) {
+    return <Landing onEnterApp={enterApp} />;
+  }
+
   return (
     <div className={styles.appShell}>
       <div className={styles.layoutRow}>
@@ -39,10 +56,16 @@ export default function App() {
           onChange={setTab}
           signedIn={signedIn}
           onSignIn={() => setSignedIn(true)}
+          onGoHome={goHome}
         />
 
         <div className={styles.contentArea}>
-          <Header signedIn={signedIn} onSignIn={() => setSignedIn(true)} onOpenProfile={() => setTab(TABS.PROFILE)} />
+          <Header
+            signedIn={signedIn}
+            onSignIn={() => setSignedIn(true)}
+            onOpenProfile={() => setTab(TABS.PROFILE)}
+            onGoHome={goHome}
+          />
 
           <div className={styles.content}>
             {tab === TABS.DASHBOARD && (

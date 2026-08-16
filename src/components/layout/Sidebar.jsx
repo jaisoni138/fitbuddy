@@ -3,12 +3,14 @@ import { RouteDivider } from "../ui/RouteDivider";
 import styles from "./Sidebar.module.css";
 
 /** Left-hand navigation, shown on tablet/desktop viewports only (see Sidebar.module.css). */
-export function Sidebar({ activeTab, onChange, signedIn, onSignIn }) {
+export function Sidebar({ activeTab, onChange, signedIn, onSignIn, onGoHome }) {
   return (
     <aside className={styles.sidebar}>
       <div>
-        <div className={styles.brand}>FITBUDDY</div>
-        <div className={styles.tagline}>Move. Log. Repeat.</div>
+        <button type="button" className={styles.brandButton} onClick={onGoHome}>
+          <div className={styles.brand}>FITBUDDY</div>
+          <div className={styles.tagline}>Move. Log. Repeat.</div>
+        </button>
         <div className={styles.divider}>
           <RouteDivider color="#44403c" />
         </div>

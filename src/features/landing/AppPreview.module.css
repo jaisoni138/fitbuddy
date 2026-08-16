@@ -1,0 +1,125 @@
+.frame {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-dark);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 30px 60px -20px rgba(28, 25, 23, 0.45);
+  transform: rotate(2deg);
+}
+
+.frameBar {
+  display: flex;
+  gap: 6px;
+  padding: 6px 8px 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #57534e;
+}
+
+.screen {
+  background: var(--color-background);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.statRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.statPill {
+  flex: 1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--color-text-primary);
+}
+
+.statLabel {
+  font-size: 10px;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.chartCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.chartBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 70px;
+}
+
+.bar {
+  flex: 1;
+  background: var(--color-accent);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.9;
+}
+
+.list {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 4px 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rowLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.rowMeta {
+  font-size: 10px;
+  color: var(--color-text-faint);
+}
+
+@media (min-width: 768px) {
+  .frame {
+    max-width: 340px;
+  }
+}

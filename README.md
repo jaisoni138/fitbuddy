@@ -4,6 +4,7 @@ A fitness and schedule tracking app covering running, walking, gym, yoga, and ge
 
 ## Features
 
+- **Landing page** — full marketing homepage with hero, feature sections, and install call-to-action, shown before entering the app
 - **Dashboard** — weekly minutes chart, streak, and recent activity feed
 - **Log workout** — log duration, distance, and notes per activity type
 - **Schedule** — plan workouts across the week and mark them done
@@ -54,7 +55,7 @@ public/
   apple-touch-icon.png
 src/
   main.jsx               # React entry point, registers the service worker
-  App.jsx                # top-level layout + tab routing
+  App.jsx                # view routing (landing vs. app) + tab routing
   index.css              # design tokens (CSS variables) + global reset
   constants/
     theme.js              # JS-side design tokens (for libs like Recharts)
@@ -66,9 +67,10 @@ src/
     useActivities.js        # activity log state + derived stats
     useSchedule.js           # weekly schedule state
   components/
-    layout/                 # Header, BottomNav
+    layout/                 # Header, Sidebar, BottomNav, shared nav items
     ui/                      # StatCard, ActivityRow, Pill, RouteDivider
   features/
+    landing/                 # marketing homepage (hero, features, CTA, static app preview)
     dashboard/
     logWorkout/
     schedule/

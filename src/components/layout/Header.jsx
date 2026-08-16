@@ -2,14 +2,14 @@ import { LogIn } from "lucide-react";
 import { RouteDivider } from "../ui/RouteDivider";
 import styles from "./Header.module.css";
 
-export function Header({ signedIn, onSignIn, onOpenProfile }) {
+export function Header({ signedIn, onSignIn, onOpenProfile, onGoHome }) {
   return (
     <div className={styles.header}>
       <div className={styles.headerRow}>
-        <div>
+        <button type="button" className={styles.brandButton} onClick={onGoHome}>
           <div className={styles.brand}>FITBUDDY</div>
           <div className={styles.tagline}>Move. Log. Repeat.</div>
-        </div>
+        </button>
         {signedIn ? (
           <button type="button" className={styles.avatarButton} onClick={onOpenProfile}>
             JD

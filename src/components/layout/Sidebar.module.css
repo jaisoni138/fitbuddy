@@ -69,3 +69,12 @@
     min-height: 100%;
   }
 }
+
+.brandButton {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+}
