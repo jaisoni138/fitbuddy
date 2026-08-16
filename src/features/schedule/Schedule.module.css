@@ -1,0 +1,140 @@
+.title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--color-text-primary);
+  margin-bottom: 14px;
+}
+
+.dayBlock {
+  margin-bottom: 14px;
+}
+
+.dayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.dayName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.addButton {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 3px;
+}
+
+.restDay {
+  font-size: 12px;
+  color: #c7c3bd;
+  padding: 8px 0;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+
+.itemLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.itemLabelDone {
+  color: var(--color-text-faint);
+  text-decoration: line-through;
+}
+
+.itemTime {
+  font-size: 11px;
+  color: var(--color-text-faint);
+}
+
+.checkButton {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid #d6d3d1;
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkButtonDone {
+  border: none;
+  background: var(--color-accent);
+}
+
+.addForm {
+  margin-top: 8px;
+  background: var(--color-background);
+  border: 1px dashed #d6d3d1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.addFormRow {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.addFormSelect,
+.addFormInput {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  font-size: 12px;
+}
+
+.addFormActions {
+  display: flex;
+  gap: 6px;
+}
+
+.addConfirm {
+  flex: 1;
+  padding: 7px;
+  border-radius: 8px;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.addCancel {
+  flex: 1;
+  padding: 7px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 12px;
+  cursor: pointer;
+}
