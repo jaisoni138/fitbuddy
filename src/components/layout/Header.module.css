@@ -50,3 +50,10 @@
 .divider {
   margin-top: 14px;
 }
+
+/* On tablet/desktop the Sidebar carries the brand and sign-in action instead. */
+@media (min-width: 768px) {
+  .header {
+    display: none;
+  }
+}

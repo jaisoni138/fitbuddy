@@ -10,6 +10,7 @@ A fitness and schedule tracking app covering running, walking, gym, yoga, and ge
 - **Video library** — filterable video suggestions per activity type
 - **Profile** — mocked "Sign in with Google" flow
 - **Installable** — add Fitbuddy to your home screen or desktop like a native app, with offline support
+- **Responsive** — one codebase that adapts across phone, iPad, and laptop
 
 ## Getting started
 
@@ -36,6 +37,14 @@ Fitbuddy is a PWA, so it can be installed like a native app once served over `ht
 - **Safari (iOS):** Share button → "Add to Home Screen"
 
 Once installed, Fitbuddy launches in its own window/icon and caches its assets for offline use.
+
+## Responsive layout
+
+- **Phone (< 768px):** single-column, bottom tab bar navigation, edge-to-edge
+- **Tablet / laptop (≥ 768px):** left sidebar navigation replaces the bottom tab bar, content widens into a centered card shell
+- **Wide desktop (≥ 900–1180px):** dashboard shows the chart and activity feed side by side, schedule shows the week as columns, and the video library shows a multi-column grid
+
+All breakpoints are plain CSS media queries inside each feature's `.module.css` file — no separate mobile/desktop components to keep in sync.
 
 ## Project structure
 

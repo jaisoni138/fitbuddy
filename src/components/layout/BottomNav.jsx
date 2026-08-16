@@ -1,14 +1,7 @@
-import { TrendingUp, Plus, Calendar, PlayCircle, User } from "lucide-react";
+import { NAV_ITEMS } from "./navItems";
 import styles from "./BottomNav.module.css";
 
-const NAV_ITEMS = [
-  { id: "dashboard", label: "Dashboard", icon: TrendingUp },
-  { id: "log", label: "Log", icon: Plus },
-  { id: "schedule", label: "Schedule", icon: Calendar },
-  { id: "videos", label: "Videos", icon: PlayCircle },
-  { id: "profile", label: "Profile", icon: User },
-];
-
+/** Fixed bottom tab bar, shown on phone-width viewports only (see BottomNav.module.css). */
 export function BottomNav({ activeTab, onChange }) {
   return (
     <nav className={styles.nav}>

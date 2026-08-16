@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "./components/layout/Header";
 import { BottomNav } from "./components/layout/BottomNav";
+import { Sidebar } from "./components/layout/Sidebar";
 import { Dashboard } from "./features/dashboard/Dashboard";
 import { LogWorkout } from "./features/logWorkout/LogWorkout";
 import { Schedule } from "./features/schedule/Schedule";
@@ -32,26 +33,37 @@ export default function App() {
 
   return (
     <div className={styles.appShell}>
-      <Header signedIn={signedIn} onSignIn={() => setSignedIn(true)} onOpenProfile={() => setTab(TABS.PROFILE)} />
+      <div className={styles.layoutRow}>
+        <Sidebar
+          activeTab={tab}
+          onChange={setTab}
+          signedIn={signedIn}
+          onSignIn={() => setSignedIn(true)}
+        />
 
-      <div className={styles.content}>
-        {tab === TABS.DASHBOARD && (
-          <Dashboard
-            activities={activities}
-            weeklyMinutesByDay={weeklyMinutesByDay}
-            totalMinutes={totalMinutes}
-            sessionCount={sessionCount}
-            onNavigateToLog={() => setTab(TABS.LOG)}
-          />
-        )}
-        {tab === TABS.LOG && <LogWorkout onSubmit={handleLogSubmit} />}
-        {tab === TABS.SCHEDULE && (
-          <Schedule schedule={schedule} onAddItem={addScheduleItem} onToggleItem={toggleItemDone} />
-        )}
-        {tab === TABS.VIDEOS && <VideoLibrary />}
-        {tab === TABS.PROFILE && (
-          <Profile signedIn={signedIn} onSignIn={() => setSignedIn(true)} onSignOut={() => setSignedIn(false)} />
-        )}
+        <div className={styles.contentArea}>
+          <Header signedIn={signedIn} onSignIn={() => setSignedIn(true)} onOpenProfile={() => setTab(TABS.PROFILE)} />
+
+          <div className={styles.content}>
+            {tab === TABS.DASHBOARD && (
+              <Dashboard
+                activities={activities}
+                weeklyMinutesByDay={weeklyMinutesByDay}
+                totalMinutes={totalMinutes}
+                sessionCount={sessionCount}
+                onNavigateToLog={() => setTab(TABS.LOG)}
+              />
+            )}
+            {tab === TABS.LOG && <LogWorkout onSubmit={handleLogSubmit} />}
+            {tab === TABS.SCHEDULE && (
+              <Schedule schedule={schedule} onAddItem={addScheduleItem} onToggleItem={toggleItemDone} />
+            )}
+            {tab === TABS.VIDEOS && <VideoLibrary />}
+            {tab === TABS.PROFILE && (
+              <Profile signedIn={signedIn} onSignIn={() => setSignedIn(true)} onSignOut={() => setSignedIn(false)} />
+            )}
+          </div>
+        </div>
       </div>
 
       <BottomNav activeTab={tab} onChange={setTab} />

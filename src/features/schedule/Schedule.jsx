@@ -20,6 +20,7 @@ export function Schedule({ schedule, onAddItem, onToggleItem }) {
   return (
     <div>
       <div className={styles.title}>This week</div>
+      <div className={styles.weekGrid}>
       {DAYS.map((day) => (
         <div key={day} className={styles.dayBlock}>
           <div className={styles.dayHeader}>
@@ -95,6 +96,7 @@ export function Schedule({ schedule, onAddItem, onToggleItem }) {
           )}
         </div>
       ))}
+      </div>
     </div>
   );
 }

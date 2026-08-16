@@ -57,3 +57,11 @@
   color: #c7c3bd;
   margin-top: 10px;
 }
+
+/* Wider screens: video cards flow into a grid instead of a single column. */
+@media (min-width: 700px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}

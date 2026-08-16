@@ -1,16 +1,50 @@
 .appShell {
   font-family: var(--font-body);
   background: var(--color-background);
-  min-height: 600px;
-  max-width: 440px;
-  margin: 0 auto;
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
   position: relative;
 }
 
+.layoutRow {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentArea {
+  flex: 1;
+  min-width: 0;
+}
+
 .content {
-  padding: 18px 20px 90px;
+  padding: 18px 20px calc(90px + env(safe-area-inset-bottom));
   min-height: 420px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Tablet and up: card-style shell centered on the page, sidebar nav
+   replaces the bottom tab bar, so the extra bottom padding is dropped. */
+@media (min-width: 768px) {
+  .appShell {
+    max-width: 1180px;
+    margin: 32px auto;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: calc(100vh - 64px);
+    box-shadow: 0 1px 3px rgba(28, 25, 23, 0.06);
+  }
+
+  .layoutRow {
+    flex-direction: row;
+    min-height: calc(100vh - 64px);
+  }
+
+  .content {
+    padding: 32px 40px;
+    max-width: 900px;
+    margin: 0;
+  }
 }

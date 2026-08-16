@@ -54,3 +54,17 @@
   border-radius: 14px;
   padding: 0 16px;
 }
+
+/* Wider screens: chart and recent activity sit side by side instead of stacked. */
+@media (min-width: 900px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .statsRow {
+    grid-column: 1 / -1;
+  }
+}

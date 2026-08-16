@@ -138,3 +138,17 @@
   font-size: 12px;
   cursor: pointer;
 }
+
+/* Wider screens: show the week as columns instead of a stacked list. */
+@media (min-width: 700px) {
+  .weekGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+
+  .dayBlock {
+    margin-bottom: 0;
+  }
+}
