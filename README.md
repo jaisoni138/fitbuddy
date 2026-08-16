@@ -1,4 +1,4 @@
-# Trailhead
+# Fitbuddy
 
 A fitness and schedule tracking app prototype covering running, walking, gym, yoga, and general exercise. Built with React + Vite.
 
